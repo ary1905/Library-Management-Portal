@@ -1,0 +1,15 @@
+#myBox1::placeholder{
+    color: black;
+}
+
+#myBox2::placeholder{
+    color: white;
+}
+
+#mySearch1::placeholder{
+    color: black;
+}
+
+#mySearch2::placeholder{
+    color: white;
+}
