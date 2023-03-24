@@ -1,11 +1,11 @@
 import Axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LibraryImg from "./lib.jpg";
 
 const LoginPage = (props) => {
-
+  const navigate = useNavigate();
   const [ID, setID] = useState('');
   const [Pass_word, setPass_word] = useState('');
 
@@ -14,13 +14,18 @@ const LoginPage = (props) => {
       ID: ID,
       Pass_word: Pass_word,
     }).then((response) => {
-      console.log(response);
+      if (response.data.message) {
+        alert(response.data.message);
+      }
+      else {
+        navigate('/')
+      }
     });
   };
 
   return (
     <>
-      <section className="vh-100">
+      <section className="vh-100" >
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col col-xl-10">

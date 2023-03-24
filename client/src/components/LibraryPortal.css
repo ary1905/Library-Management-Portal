@@ -4,10 +4,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #ffffff;
+    filter: brightness(200%);
 }
 
 .header-title {
     font-size: 3rem;
+    opacity: 1;
+}
+
+
+.mainbody::before{    
+      content: "";
+      background-image: url('home.png');
+      background-repeat: no-repeat;
+      min-height:100%;
+      position: absolute;
+      top: 70px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.584;
 }
 
 .main {
@@ -28,16 +45,8 @@
     box-shadow: 0px 0px 5px 0px rgb(255, 255, 255);
     padding: 20px;
     text-align: center;
-}
-.section2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 300px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px 0px rgb(0, 0, 0);
-    padding: 20px;
-    text-align: center;
+    background-color: #000000;
+    filter: brightness(109%);
 }
 
 .section-image {

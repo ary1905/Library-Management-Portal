@@ -1,6 +1,5 @@
 import './App.css';
-import Navbar from './components/Navbar';
-import { useState } from 'react';
+import Navbar2 from './components/Navbar2';
 import {
   BrowserRouter as Router,
   Routes,
@@ -13,65 +12,26 @@ import Inst from './components/Inst';
 import LoginPage from './components/LoginPage';
 import LibraryPortalHome from './components/LibraryPortalHome';
 
-
 function App() {
 
-  const [myStyle, setMyStyle] = useState({
-    backgroundColor: 'white',
-    color: 'black',
-  });
-  const toggleDarkMode = () => {
-    if (myStyle.color === 'white') {
-      setMyStyle({
-        color: 'black',
-        backgroundColor: 'white'
-      })
-      document.body.style.backgroundColor = 'white';
-      document.body.style.color = 'black';
-    }
-    else {
-      setMyStyle({
-        color: 'white',
-        backgroundColor: 'black'
-      })
-      document.body.style.backgroundColor = 'black';
-      document.body.style.color = 'white';
-    }
-  }
   return (
     <>
       <Router>
-        <div style={myStyle}>
-          <Navbar mode={`${myStyle.backgroundColor === 'white' ? 'light' : 'dark'}`}
-            searchMode={`${myStyle.backgroundColor === 'white' ? 'white' : 'black'}`}
-            textMode={`${myStyle.backgroundColor === 'white' ? 'black' : 'white'}`}
-            classMode={`${myStyle.backgroundColor === 'white' ? 'mySearch1' : 'mySearch2'}`}
-            btnMode={`${myStyle.backgroundColor === 'white' ? 'dark' : 'light'}`}
+        <div>
+          <Navbar2 mode='dark'
+            searchMode='black'
+            textMode='white'
+            classMode='mySearch2'
+            btnMode='light'
           />
-          <div className="form-check form-switch my-3">
-            <input className="form-check-input mx-3" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={toggleDarkMode} style={{ float: 'right' }} />
-            <label className="form-check-label" htmlFor="flexSwitchCheckDefault" style={{ float: 'right' }}>Enable Dark Mode</label>
-          </div>
           <div className="container my-3" >
             <Routes>
-              <Route path='/' element={<LibraryPortalHome box_shadow={`${myStyle.backgroundColor === 'white' ? 'section2' : 'section1'}`}></LibraryPortalHome>}></Route>
-              <Route path='/Login' element={<LoginPage btnMode={`${myStyle.backgroundColor === 'white' ? 'dark' : 'light'}`}
-              cardMode={`${myStyle.backgroundColor === 'white' ? '#d5ad18' : '#56564C'}`}
-              ></LoginPage>}></Route>
-              <Route path='/Inst' element={<Inst mode={`${myStyle.backgroundColor === 'white' ? 'light' : 'dark'}`}></Inst>}></Route>
-              <Route path="/AddInst" element={<Add mode={`${myStyle.backgroundColor === 'white' ? 'light' : 'dark'}`}
-                classMode={`${myStyle.backgroundColor === 'white' ? 'mySearch1' : 'mySearch2'}`}
-                searchMode={`${myStyle.backgroundColor === 'white' ? 'white' : 'black'}`}
-                textMode={`${myStyle.backgroundColor === 'white' ? 'black' : 'white'}`}
-                btnMode={`${myStyle.backgroundColor === 'white' ? 'dark' : 'light'}`}>
-              </Add>}>
-              </Route>
-              <Route path="/about" element={<About mode={`${myStyle.backgroundColor === 'white' ? 'light' : 'dark'}`} />}>
-              </Route>
-              <Route path="/success" element={<Success mode={`${myStyle.backgroundColor === 'white' ? 'light' : 'dark'}`}
-                btnMode={`${myStyle.backgroundColor === 'white' ? 'dark' : 'light'}`}
-              />}>
-              </Route>
+              <Route path='/' element={<LibraryPortalHome box_shadow = "section1"></LibraryPortalHome>}></Route>
+              <Route path='/Login' element={<LoginPage btnMode='dark' cardMode='#d5ad18'></LoginPage>}></Route>
+              <Route path='/Inst' element={<Inst mode='dark'></Inst>}></Route>
+              <Route path="/AddInst" element={<Add mode='dark' classMode='mySearch2' searchMode='black' textMode='white' btnMode='light'></Add>}></Route>
+              <Route path="/about" element={<About mode='dark'/>}></Route>
+              <Route path="/success" element={<Success mode='dark' btnMode='light'/>}></Route>
             </Routes>
           </div>
         </div>
