@@ -22,6 +22,9 @@ export default function Navbar2(props) {
                                 <Link className="nav-link" aria-current="page" to="/Login" textmode="/">Login</Link>
                             </li>
                             <li className="nav-item">
+                                <Link className="nav-link" aria-current="page" to="/Register" textmode="/">Register</Link>
+                            </li>
+                            <li className="nav-item">
                                 <Link className="nav-link" to="/about">{props.aboutText}</Link>
                             </li>
                         </ul>

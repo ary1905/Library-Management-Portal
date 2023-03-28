@@ -15,7 +15,7 @@ const db = mysql.createConnection({
     user: "root",
     host: "localhost",
     password: "",
-    database: "university"
+    database: "library"
 });
 
 app.post('/login_auth', (req, res) => {
@@ -23,14 +23,14 @@ app.post('/login_auth', (req, res) => {
     const ID = req.body.ID;
     const Pass_word = req.body.Pass_word;
 
-    db.query("SELECT ID, Pass_word FROM instructor WHERE ID = ? AND Pass_word = ? ",
+    db.query("SELECT Admin_ID, Admin_password FROM admin_login WHERE Admin_ID = ? AND Admin_password = ? ",
         [ID, Pass_word],
         (err, result) => {
             if (err) {
                 res.send({ err: err });
             }
             if (result.length > 0) {
-                res.send(result);
+                res.status(200).send(result);
             }
             else {
                 res.send({ message: "Invalid ID/password" });

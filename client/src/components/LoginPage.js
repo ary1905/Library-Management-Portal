@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import LibraryImg from "./lib.jpg";
 
 const LoginPage = (props) => {
@@ -9,17 +9,20 @@ const LoginPage = (props) => {
   const [ID, setID] = useState('');
   const [Pass_word, setPass_word] = useState('');
 
-  const login = (props) => {
+  const login = () => {
     Axios.post("http://localhost:3001/login_auth", {
       ID: ID,
       Pass_word: Pass_word,
     }).then((response) => {
       if (response.data.message) {
         alert(response.data.message);
+        console.log(response);
       }
       else {
-        navigate('/')
-      }
+        navigate('/');
+        console.log(response);
+        props.change();
+      }   
     });
   };
 
@@ -38,7 +41,7 @@ const LoginPage = (props) => {
                     <div className="card-body p-4 p-lg-5 text-black">
                       <div className="d-flex align-items-center mb-3 pb-1">
                         <i className="fas fa-cubes fa-2x me-3" style={{ color: '#ff6219' }}></i>
-                        <span className="h1 fw-bold mb-0">Login</span>
+                        <span className="h1 fw-bold mb-0"><b>LOGIN</b></span>
                       </div>
                       <div className="form-outline mb-4">
                         <label className="form-label" htmlFor="form2Example17"><b>ID:</b></label>

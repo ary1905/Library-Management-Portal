@@ -1,12 +1,13 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-$host = "localhost"; 
-$user = "root"; 
-$password = ""; 
-$database = "university";
-$id = '';
- 
-$con = mysqli_connect($host, $user, $password,$database);
+$host="localhost";
+$port=3306;
+$socket="";
+$user="root";
+$password="";
+$dbname="library";
+
+$con = new mysqli($host, $user, $password, $dbname, $port, $socket);
  
 $method = $_SERVER['REQUEST_METHOD'];
  
@@ -17,7 +18,7 @@ if (!$con) {
  
 switch ($method) {
     case 'GET':
-      $sql = "select * from instructor"; 
+      $sql = "select * from books;"; 
       break;
 }
  
