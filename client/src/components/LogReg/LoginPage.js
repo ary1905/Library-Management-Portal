@@ -43,13 +43,13 @@ const LoginPage = (props) => {
                         <i className="fas fa-cubes fa-2x me-3" style={{ color: '#ff6219' }}></i>
                         <span className="h1 fw-bold mb-0"><b>LOGIN</b></span>
                       </div>
-                      <div className="form-outline mb-4">
+                      <div className="form-outline mb-4"> 
                         <label className="form-label" htmlFor="form2Example17"><b>ID:</b></label>
-                        <input type="text" id="form2Example17" className="form-control form-control-lg" value={ID} onChange={(e) => { setID(e.target.value) }} />
+                        <input type="text" id="form2Example17"placeholder='ID' className="form-control form-control-lg" value={ID} onChange={(e) => { setID(e.target.value) }} />
                       </div>
                       <div className="form-outline mb-4">
                         <label className="form-label" htmlFor="form2Example27"><b>Password:</b></label>
-                        <input type="password" id="form2Example27" className="form-control form-control-lg" value={Pass_word} onChange={(e) => { setPass_word(e.target.value) }} />
+                        <input type="password" id="form2Example27" placeholder='Password' className="form-control form-control-lg" value={Pass_word} onChange={(e) => { setPass_word(e.target.value) }} />
                       </div>
                       <div className="pt-1 mb-4">
                         <input type='submit' className={`btn btn-${props.btnMode}`} value='Login' onClick={login} />

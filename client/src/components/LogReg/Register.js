@@ -10,7 +10,7 @@ const LoginPage = (props) => {
 
   const handleChange = () => {
     if (Admin_ID.length !== 0 && Admin_password.length !== 0) {
-      const url = 'http://localhost/register.php'
+      const url = 'http://localhost/DBS_Project/PHP/register.php'
 
       let fData = new FormData();
       fData.append('Admin_ID', Admin_ID);

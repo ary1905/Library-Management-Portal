@@ -10,7 +10,7 @@ export default function Add(props) {
 
     const handleChange = () => {
         if (ID.length !== 0 && I_Name.length !== 0 && Dept_name.length !== 0 && Salary.length !== 0) {
-            const url = 'http://localhost/add.php'
+            const url = 'http://localhost/DBS_Project/PHP/add.php'
 
             let fData = new FormData();
             fData.append('ID', ID);

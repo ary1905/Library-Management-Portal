@@ -1,15 +1,15 @@
 import React from 'react';
 import './LibraryPortal.css';
-import BookImage from './book.jpg';
-import AuthorImage from './author.jpg';
-import EventImage from './event.jpg';
+import BookImage from './HomePage/book.jpg';
+import AuthorImage from './HomePage/author.jpg';
+import EventImage from './HomePage/event.jpg';
 import { Link } from "react-router-dom";
 
 function LibraryPortal(props) {
   return (
     <div className='mainbody'>
       <header className="header">
-        <h1 className="header-title">Welcome to the BookShelf-Pro Web Portal</h1>
+        <h1><span class="welcome">Welcome to the </span><span class="highlight">BookShelf-Pro</span> <span class="web-portal">Web Portal</span></h1>
       </header>
       <main className="main">
         <section className='section1'>

@@ -8,23 +8,62 @@
     filter: brightness(200%);
 }
 
-.header-title {
-    font-size: 3rem;
-    opacity: 1;
-}
+h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-top: 50px;
+    color: #333;
+    position: relative;
+  }
+  
+  .welcome {
+    color: #FFD700;
+  }
+  
+  .highlight {
+    color: #FFD700;
+    font-weight: bold;
+  }
+  
+  .web-portal {
+    color: #FFD700;
+  }
+  
+  /* Add a shadow to the heading */
+  h1:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Animate the highlight text */
+  .highlight {
+    animation: highlight 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes highlight {
+    from { color: #FFD700; }
+    to { color: #F00; }
+  }
+  
 
 
-.mainbody::before{    
-      content: "";
-      background-image: url('home.png');
-      background-repeat: no-repeat;
-      min-height:100%;
-      position: absolute;
-      top: 70px;
-      right: 0px;
-      bottom: 0px;
-      left: 0px;
-      opacity: 0.584;
+.mainbody::before {
+    content: "";
+    background-image: url('HomePage/home.png');
+    background-repeat: no-repeat;
+    min-height: 100%;
+    position: absolute;
+    top: 70px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.584;
 }
 
 .main {

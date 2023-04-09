@@ -1,0 +1,27 @@
+.my-page {
+    /* Set the background image and make it cover the entire page */
+    background-image: url("book.png");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Define the position and size of each doodle element */
+  .doodle {
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .doodle-1 {
+    background-image: url("book.png");
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  
