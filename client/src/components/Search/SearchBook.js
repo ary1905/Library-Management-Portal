@@ -10,7 +10,7 @@ class Inst extends Component {
     }
 
     componentDidMount() {
-        const url = 'http://localhost/DBS_Project/PHP/display.php'
+        const url = 'http://localhost/DBS_Project/PHP/Book.php'
         axios.get(url).then(response => response.data)
             .then((data) => {
                 this.setState({ Books: data })

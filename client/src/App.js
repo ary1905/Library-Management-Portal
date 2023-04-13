@@ -11,7 +11,8 @@ import LibraryPortalHome from './components/Home/LibraryPortalHome';
 import LoggedOut from './components/Home/LoggedOutHome';
 import About from './components/About/About';
 import Book from './components/Display/Book';
-import Search from './components/Search/Search';
+import SearchBook from './components/Search/SearchBook';
+import SearchAuthor from './components/Search/SearchAuthor';
 import LoginPage from './components/LogReg/LoginPage';
 import Register from './components/LogReg/Register';
 import Add from './components/Add/Add';
@@ -56,7 +57,8 @@ function App() {
               <Route path="/AddInst" element={<Add mode='dark' classMode='mySearch2' searchMode='black' textMode='white' btnMode='light'></Add>}></Route>
               <Route path="/about" element={<About mode='dark' />}></Route>
               <Route path="/success" element={<Success mode='dark' btnMode='light' />}></Route>
-              <Route path="/Search" element={<Search></Search>}></Route>
+              <Route path="/SearchBook" element={<SearchBook></SearchBook>}></Route>
+              <Route path="/SearchAuthor" element={<SearchAuthor></SearchAuthor>}></Route>
               <Route path='/Back' element={<Back></Back>}></Route>
             </Routes>
           </div>

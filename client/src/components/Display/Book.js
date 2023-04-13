@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './book.css'
 
 class Book extends Component {
     state = {
         Books: []
     }
     componentDidMount() {
-        const url = 'http://localhost/DBS_Project/PHP/index.php'
+        const url = 'http://localhost/DBS_Project/PHP/Book.php'
         axios.get(url).then(response => response.data)
             .then((data) => {
                 this.setState({ Books: data })
@@ -17,10 +16,19 @@ class Book extends Component {
         return (
             <div className='page' style={{ width: '1519px', height: '100vh', position: 'absolute', left: '0', top: '70px' }}>
                 <div className="page" style={{ padding: 20 }}>
-                    <div className="col-xs-8">
-                        <h1 className='my-4' style={{ color: '#FFC600' }}>Books Table</h1>
-                        <table className={`table table-bordered my-3 table-striped table-${this.props.mode}`} style={{borderRadius:'3em'}}>
-                            <thead className="thead-dark" style={{borderRadius:'3em'}}>
+                    <div className="col-xs-8" style={{ border: '5px solid #d5ad18', borderRadius: '10px' }}>
+                        <table className={`table`}>
+                            <thead>
+                                <tr style={{ backgroundColor: '#d5ad18' }}>
+                                    <th style={{ border: 'none' }}></th>
+                                    <th style={{ border: 'none' }}></th>
+                                    <th style={{ border: 'none' }}><h1 style={{ color: 'black', textAlign: 'center', width: '100%' }}>Books Table</h1></th>
+                                    <th style={{ border: 'none' }}></th>
+                                    <th style={{ border: 'none' }}></th>
+                                    <th style={{ border: 'none' }}></th>
+                                </tr>
+                            </thead>
+                            <thead style={{ color:'white' }}>
                                 <tr>
                                     <th style={{ height: '40px' }}>Books ID</th>
                                     <th>Books Name</th>
@@ -30,7 +38,7 @@ class Book extends Component {
                                     <th>Category ID</th>
                                 </tr>
                             </thead>
-                            <tbody className="thead-light" style={{borderRadius:'3em'}}>
+                            <tbody className="thead-light" style={{ color:'white' }}>
                                 {this.state.Books.map((rs, index) => (
                                     <tr key={index}>
                                         <td>{rs.Book_ID}</td>

@@ -26,16 +26,29 @@ export default function Navbar(props) {
                             <Link className="nav-link" to="/about">{props.aboutText}</Link>
                         </li>
                         <li class="nav-item dropdown" data-bs-theme="dark">
-                            <a class="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <Link class="nav-link dropdown-toggle" to='/' role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 {props.add}
-                            </a>
+                            </Link>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/AddBook">Add New Book</a></li>
-                                <li><a class="dropdown-item" href="/AddAdmin">Add New Admin</a></li>
-                                <li><a class="dropdown-item" href="/AddAuthor">Add New Author</a></li>
-                                <li><a class="dropdown-item" href="/AddUser">Add New User</a></li>
-                                <li><a class="dropdown-item" href="/AddCategory">Add New Category</a></li>
-                                <li><a class="dropdown-item" href="/AddIssue">Add New Issue</a></li>
+                                <li><Link class="dropdown-item" to="/AddBook">Add New Book</Link></li>
+                                <li><Link class="dropdown-item" to="/AddAdmin">Add New Admin</Link></li>
+                                <li><Link class="dropdown-item" to="/AddAuthor">Add New Author</Link></li>
+                                <li><Link class="dropdown-item" to="/AddUser">Add New User</Link></li>
+                                <li><Link class="dropdown-item" to="/AddCategory">Add New Category</Link></li>
+                                <li><Link class="dropdown-item" to="/AddIssue">Add New Issue</Link></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown" data-bs-theme="dark">
+                            <Link class="nav-link dropdown-toggle" to='/' role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {props.search}
+                            </Link>
+                            <ul class="dropdown-menu">
+                                <li><Link class="dropdown-item" to="/SearchBook">Search Book Records</Link></li>
+                                <li><Link class="dropdown-item" to="/SearchUser">Search User Details</Link></li>
+                                <li><Link class="dropdown-item" to="/SearchAdmin">Search Admin Details</Link></li>
+                                <li><Link class="dropdown-item" to="/SearchAuthor">Search Author Records</Link></li>
+                                <li><Link class="dropdown-item" to="/SearchCategory">Search for Categories</Link></li>
+                                <li><Link class="dropdown-item" to="/SearchIssue">Search Issue Records</Link></li>
                             </ul>
                         </li>
                         <li className="nav-item">
@@ -52,7 +65,8 @@ export default function Navbar(props) {
 Navbar.defaultProps = {
     title: 'Library Portal',
     aboutText: 'About Library Portal',
-    add: 'Add New Entries'
+    add: 'Add New Entries',
+    search:'Search for Records'
 }
 
 Navbar.propTypes = {
