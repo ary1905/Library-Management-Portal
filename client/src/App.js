@@ -18,7 +18,7 @@ import Register from './components/LogReg/Register';
 import Add from './components/Add/Add';
 import Success from './components/Add/Success';
 import Back from './components/Back/Back'
-
+import Author from './components/Display/Author'
 
 function App() {
 
@@ -36,14 +36,12 @@ function App() {
             <Navbar mode='dark'
               searchMode='black'
               textMode='white'
-              classMode='mySearch2'
               btnMode='light'
               change = {change} />
             :
             <Navbar2 mode='dark'
               searchMode='black'
               textMode='white'
-              classMode='mySearch2'
               btnMode='light'
             />
           }
@@ -60,6 +58,7 @@ function App() {
               <Route path="/SearchBook" element={<SearchBook></SearchBook>}></Route>
               <Route path="/SearchAuthor" element={<SearchAuthor></SearchAuthor>}></Route>
               <Route path='/Back' element={<Back></Back>}></Route>
+              <Route path='/Author' element={<Author></Author>}></Route>
             </Routes>
           </div>
         </div>

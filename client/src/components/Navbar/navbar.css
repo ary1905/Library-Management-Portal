@@ -1,0 +1,23 @@
+.bg-blue{
+  background-color: #2b2d42;
+}
+.navbar-text{
+  color: white;
+}
+
+.dropdown-menu{
+  background-color: #2b2d42;
+  transform: translateX(12%);
+}
+
+.dropdown-item:hover{
+  background-color: rgb(39, 73, 101);
+}
+
+.nav-link:hover{
+  background-color: rgb(39, 73, 101);
+}
+
+
+
+

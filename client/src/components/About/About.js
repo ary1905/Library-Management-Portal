@@ -1,9 +1,11 @@
 import React from 'react'
+import './about.css'
+import profile1 from './1.jpg'
 
 export default function About(props) {
     return (
         <div>
-            <h1 className='mx-1 my-3'>About us</h1>
+            <h1 className='mx-1 my-3' style={{ color: 'white', fontWeight: 'bold' }}>About us</h1>
             <div className="accordion" id="accordionExample" data-bs-theme={`${props.mode}`}>
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">
@@ -21,7 +23,7 @@ export default function About(props) {
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingTwo">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        <strong>Functionalities</strong>
+                            <strong>Functionalities</strong>
                         </button>
                     </h2>
                     <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -34,7 +36,7 @@ export default function About(props) {
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingThree">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        <strong>Free To Use</strong>
+                            <strong>Free To Use</strong>
                         </button>
                     </h2>
                     <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
@@ -44,6 +46,33 @@ export default function About(props) {
                     </div>
                 </div>
             </div>
+            <div className='profile my-4'>
+                <div className="card1 my-5">
+                    <div className="img-bx">
+                        <img src={profile1} style={{ paddingBottom: '30px' }} alt="img" />
+                    </div>
+                    <div className="content">
+                        <div className="detail">
+                            <h2 className='my-2' style={{ color: 'white' }}>Aryan Singh<br /><span>Team Member</span></h2>
+                            <ul className="sci my-2">
+                                <li>
+                                    <a href="https://www.facebook.com/aryan19may" target='blank'><i className="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/LonerWeeb_1905" target='blank'><i className="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/in/aryan-singh-394910250/" target='blank'><i className="fab fa-linkedin-in"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/aryan_singh0519/" target='blank'><i className="fab fa-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import './button.css'
+import './navbar.css'
 
 export default function Navbar(props) {
 
@@ -10,53 +11,50 @@ export default function Navbar(props) {
     }
 
     return (
-        <nav className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode} `}>
+        <nav className={`navbar navbar-expand-lg bg-blue navbar-dark`} style={{ height: '90px' }}>
             <div className="container-fluid">
-                <img src='favicon.png' alt='Logo' className='mx-2' style={{ width: '32px', height: '32px' }}></img>
-                <p className="navbar-brand my-1 mx-1" style={{ fontSize: '25px' }}><strong>{props.title}</strong></p>
+                <img src='favicon.png' alt='Logo' className='mx-2' style={{ width: '50px', height: '50px' }}></img>
+                <h1 className="navbar-brand my-1 mx-1" style={{ fontSize: '35px' }}><strong>{props.title}</strong></h1>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link" aria-current="page" to="/" textmode="/">Home</Link>
+                            <Link className="nav-link" aria-current="page" to="/" textmode="/"><h5 className='mx-2' style={{ paddingTop: '20px', paddingLeft: '10px' }}>Home</h5></Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/about">{props.aboutText}</Link>
+                            <Link className="nav-link" to="/about"><h5 className='mx-2' style={{ paddingTop: '20px', paddingLeft: '10px'}}>About Us</h5></Link>
                         </li>
-                        <li class="nav-item dropdown" data-bs-theme="dark">
-                            <Link class="nav-link dropdown-toggle" to='/' role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {props.add}
+                        <li className="nav-item dropdown">
+                            <Link className="nav-link" to='/' role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                                <h5 className='mx-2' style={{ paddingTop: '20px', paddingLeft: '10px' }}>{props.add}</h5>
                             </Link>
-                            <ul class="dropdown-menu">
-                                <li><Link class="dropdown-item" to="/AddBook">Add New Book</Link></li>
-                                <li><Link class="dropdown-item" to="/AddAdmin">Add New Admin</Link></li>
-                                <li><Link class="dropdown-item" to="/AddAuthor">Add New Author</Link></li>
-                                <li><Link class="dropdown-item" to="/AddUser">Add New User</Link></li>
-                                <li><Link class="dropdown-item" to="/AddCategory">Add New Category</Link></li>
-                                <li><Link class="dropdown-item" to="/AddIssue">Add New Issue</Link></li>
+                            <ul className="dropdown-menu">
+                                <li><Link className="dropdown-item" to="/AddBook"><p style={{ color: 'white' }}>Add New Book</p></Link></li>
+                                <li><Link className="dropdown-item" to="/AddBook"><p style={{ color: 'white' }}>Add New Admin</p></Link></li>
+                                <li><Link className="dropdown-item" to="/AddBook"><p style={{ color: 'white' }}>Add New Author</p></Link></li>
+                                <li><Link className="dropdown-item" to="/AddBook"><p style={{ color: 'white' }}>Add New User</p></Link></li>
+                                <li><Link className="dropdown-item" to="/AddBook"><p style={{ color: 'white' }}>Add New Category</p></Link></li>
+                                <li><Link className="dropdown-item" to="/AddBook"><p style={{ color: 'white' }}>Add New Issue</p></Link></li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown" data-bs-theme="dark">
-                            <Link class="nav-link dropdown-toggle" to='/' role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {props.search}
+                        <li className="nav-item dropdown">
+                            <Link className="nav-link" to='/' role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <h5 className='mx-2' style={{ paddingTop: '20px', paddingLeft: '10px' }}>{props.search}</h5>
                             </Link>
-                            <ul class="dropdown-menu">
-                                <li><Link class="dropdown-item" to="/SearchBook">Search Book Records</Link></li>
-                                <li><Link class="dropdown-item" to="/SearchUser">Search User Details</Link></li>
-                                <li><Link class="dropdown-item" to="/SearchAdmin">Search Admin Details</Link></li>
-                                <li><Link class="dropdown-item" to="/SearchAuthor">Search Author Records</Link></li>
-                                <li><Link class="dropdown-item" to="/SearchCategory">Search for Categories</Link></li>
-                                <li><Link class="dropdown-item" to="/SearchIssue">Search Issue Records</Link></li>
+                            <ul className="dropdown-menu">
+                                <li><Link className="dropdown-item" to="/SearchBook"><p style={{ color: 'white' }}>Search Book Records</p></Link></li>
+                                <li><Link className="dropdown-item" to="/SearchUser"><p style={{ color: 'white' }}>Search User Details</p></Link></li>
+                                <li><Link className="dropdown-item" to="/SearchAdmin"><p style={{ color: 'white' }}>Search Admin Details</p></Link></li>
+                                <li><Link className="dropdown-item" to="/SearchAuthor"><p style={{ color: 'white' }}>Search Author Records</p></Link></li>
+                                <li><Link className="dropdown-item" to="/SearchCategory"><p style={{ color: 'white' }}>Search for Categories</p></Link></li>
+                                <li><Link className="dropdown-item" to="/SearchIssue"><p style={{ color: 'white' }}>Search Issue Records</p></Link></li>
                             </ul>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/Search">Search</Link>
                         </li>
                     </ul>
                 </div>
-                <Link className="button2" to="/logOut" onClick={handleClick} >Logout</Link>
+                <Link className="button2" to="/logOut" onClick={handleClick}>Logout</Link>
             </div>
         </nav>
     )
@@ -66,7 +64,7 @@ Navbar.defaultProps = {
     title: 'Library Portal',
     aboutText: 'About Library Portal',
     add: 'Add New Entries',
-    search:'Search for Records'
+    search: 'Search for Records'
 }
 
 Navbar.propTypes = {

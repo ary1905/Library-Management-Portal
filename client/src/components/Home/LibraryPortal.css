@@ -13,23 +13,19 @@ h1 {
     text-align: center;
     color: #333;
     position: relative;
-  }
-  
-  .welcome {
+}
+
+.welcome {
     color: #FFD700;
-  }
-  
-  .highlight {
+}
+
+
+.web-portal {
     color: #FFD700;
-    font-weight: bold;
-  }
-  
-  .web-portal {
-    color: #FFD700;
-  }
-  
-  /* Add a shadow to the heading */
-  h1:before {
+}
+
+/* Add a shadow to the heading */
+h1:before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -38,19 +34,171 @@ h1 {
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-  }
-  
-  /* Animate the highlight text */
-  .highlight {
-    animation: highlight 1s ease-in-out infinite alternate;
-  }
-  
-  @keyframes highlight {
-    from { color: #FFD700; }
-    to { color: #F00; }
-  }
-  
+}
 
+/* Animate the highlight text */
+
+.highlight {
+    animation: color-animation 2s ease-in-out infinite;
+    font-weight: bold;
+}
+
+.highlight {
+    --color-1: #0D0D0E;
+    --color-2: #290C0D;
+    --color-3: #460C0C;
+    --color-4: #620B0B;
+    --color-5: #7F0A0B;
+    --color-6: #9B090A;
+    --color-7: #B70909;
+    --color-8: #D40808;
+}
+
+@keyframes color-animation {
+    0% {
+        color: var(--color-1)
+    }
+
+    6.5% {
+        color: var(--color-1)
+    }
+
+    6.5% {
+        color: var(--color-2)
+    }
+
+    13% {
+        color: var(--color-2)
+    }
+
+    13% {
+        color: var(--color-3)
+    }
+
+    19.5% {
+        color: var(--color-3)
+    }
+
+    19.5% {
+        color: var(--color-4)
+    }
+
+    26% {
+        color: var(--color-4)
+    }
+
+    26% {
+        color: var(--color-5)
+    }
+
+    32.5% {
+        color: var(--color-5)
+    }
+
+    32.5% {
+        color: var(--color-6)
+    }
+
+    39% {
+        color: var(--color-6)
+    }
+
+    39% {
+        color: var(--color-7)
+    }
+
+    44.5% {
+        color: var(--color-7)
+    }
+
+    44.5% {
+        color: var(--color-8)
+    }
+
+    50% {
+        color: var(--color-8)
+    }
+
+    50% {
+        color: var(--color-9)
+    }
+
+    50% {
+        color: var(--color-9)
+    }
+
+    50% {
+        color: var(--color-9)
+    }
+
+    50% {
+        color: var(--color-9)
+    }
+
+    50% {
+        color: var(--color-8)
+    }
+
+    55.5% {
+        color: var(--color-8)
+    }
+
+    55.5% {
+        color: var(--color-7)
+    }
+
+    62% {
+        color: var(--color-7)
+    }
+
+    62% {
+        color: var(--color-6)
+    }
+
+    68.5% {
+        color: var(--color-6)
+    }
+
+    68.5% {
+        color: var(--color-5)
+    }
+
+    75% {
+        color: var(--color-5)
+    }
+
+    75% {
+        color: var(--color-4)
+    }
+
+    81.5% {
+        color: var(--color-4)
+    }
+
+    81.5% {
+        color: var(--color-3)
+    }
+
+    88% {
+        color: var(--color-3)
+    }
+
+    88% {
+        color: var(--color-2)
+    }
+
+    94.5% {
+        color: var(--color-2)
+    }
+
+    94.5% {
+        color: var(--color-1)
+    }
+
+    100% {
+        color: var(--color-1)
+    }
+}
 
 .mainbody::before {
     content: "";
@@ -58,7 +206,7 @@ h1 {
     background-repeat: no-repeat;
     min-height: 100%;
     position: absolute;
-    top: 70px;
+    top: 100px;
     right: 0px;
     bottom: 0px;
     left: 0px;

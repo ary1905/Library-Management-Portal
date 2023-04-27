@@ -40,7 +40,7 @@ const LoginPage = (props) => {
                   <div className="col-md-6 col-lg-7 d-flex align-items-center">
                     <div className="card-body p-4 p-lg-5 text-black">
                       <div className="d-flex align-items-center mb-3 pb-1">
-                        <i className="fas fa-cubes fa-2x me-3" style={{ color: '#ff6219' }}></i>
+                        <i className="fas fa-cubes fa-2x me-3" style={{ color: '#5f4319' }}></i>
                         <span className="h1 fw-bold mb-0"><b>LOGIN</b></span>
                       </div>
                       <div className="form-outline mb-4"> 
@@ -55,7 +55,8 @@ const LoginPage = (props) => {
                         <input type='submit' className={`btn btn-${props.btnMode}`} value='Login' onClick={login} />
                       </div>
                       <Link to="/about" className="small text-muted">Terms of use.</Link><br></br>
-                      <Link to="/about" className="small text-muted">Privacy policy</Link>
+                      <Link to="/about" className="small text-muted">Privacy policy</Link><br></br>
+                      <Link to="/Register" className="small text-muted">New - Register Now !!</Link>
                     </div>
                   </div>
                 </div>

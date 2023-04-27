@@ -35,7 +35,7 @@ const LoginPage = (props) => {
                   <div className="col-md-6 col-lg-7 d-flex align-items-center">
                     <div className="card-body p-4 p-lg-5 text-black">
                       <div className="d-flex align-items-center mb-3 pb-1">
-                        <i className="fas fa-cubes fa-2x me-3" style={{ color: '#ff6219' }}></i>
+                        <i className="fas fa-cubes fa-2x me-3" style={{ color: '#5f4319' }}></i>
                         <span className="h1 fw-bold mb-0"><b>REGISTER</b></span>
                       </div>
                       <form>
