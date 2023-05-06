@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Search.css'
 
-class Inst extends Component {
+class Author extends Component {
     state = {
         Author: [],
         Input: '',
@@ -26,7 +27,7 @@ class Inst extends Component {
     }
 
     render() {
-        const filteredBooks = this.state.Author.filter((author) => {
+        const filteredAuthor = this.state.Author.filter((author) => {
             if (this.state.Option === 'Author_ID') {
                 return author.Author_ID.toLowerCase().includes(this.state.Input.toLowerCase())
             } else if (this.state.Option === 'Author_Name') {
@@ -42,8 +43,8 @@ class Inst extends Component {
                     <div className="search-container mx-2">
                         <select className="search-dropdown" value={this.state.Option} onChange={this.handleOptionChange}>
                             <option value="None">---None---</option>
-                            <option value="Book_Name">Author ID</option>
-                            <option value="ISBN">Author Name</option>
+                            <option value="Author_ID">Author ID</option>
+                            <option value="Author_Name">Author Name</option>
                         </select>
                         <input
                             type="text"
@@ -54,27 +55,51 @@ class Inst extends Component {
                         />
                     </div>
                 </form>
-                <div className="container my-2" style={{ padding: 20, color: 'white' }}>
-                    <div className="col-xs-8">
-                        <h1 className='my-4'>Author Records</h1>
-                        <table className={`table table-bordered my-3 table-striped table-${this.props.mode}`}>
-                            <thead className="thead-light">
-                                <tr style={{ padding: 20, color: 'white' }}>
-                                    <th>Author ID</th>
-                                    <th>Author Name</th>
-                                    <th>Number Of Books</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {filteredBooks.map((rs, index) => (
-                                    <tr key={index}>
-                                        <td style={{ color: 'white' }}>{rs.Author_ID}</td>
-                                        <td style={{ color: 'white' }}>{rs.Author_Name}</td>
-                                        <td style={{ color: 'white' }}>{rs.NumBooks}</td>
+                <div className='page' style={{ width: '1300px', height: '100vh', position: 'absolute', left: '70', top: '150px' }}>
+                    <div className="page" style={{ padding: 20 }}>
+                        <div className="col-xs-8" style={{ border: '5px solid #d5ad18', borderRadius: '10px' }}>
+                            <table className={`table`}>
+                                <thead>
+                                    <tr style={{ backgroundColor: '#d5ad18' }}>
+                                        <th style={{ border: 'none' }}><h1 style={{ color: 'black', fontWeight: 'bold', textIndent:'430px'}}>Author</h1></th>
+                                        <th style={{ border: 'none' }}><h1 style={{ color: 'black', fontWeight: 'bold', textIndent:'-150px' }}>Table</h1></th>
+                                        <th style={{ border: 'none' }}></th>
+                                        <th style={{ border: 'none' }}></th>
+                                        <th style={{ border: 'none' }}></th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <thead style={{ color: 'white' }}>
+                                    <tr>
+                                        <th style={{ height: '40px' }}>Author ID</th>
+                                        <th>Author Name</th>
+                                        <th>Number Of Books</th>
+                                        <th colSpan={2} style={{ textAlign: "center" }}>Operation</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="thead-light" style={{ color: 'white' }}>
+                                    {filteredAuthor.map((rs, index) => (
+                                        <tr key={index}>
+                                            <td>{rs.Author_ID}</td>
+                                            <td>{rs.Author_Name}</td>
+                                            <td>{rs.NumBooks}</td>
+                                            <td style={{paddingLeft:'50px'}}><Link className="cssbuttons-io-buttondel" to='/Author' onClick={this.handleDelete = () => {
+                                                const url = 'http://localhost/DBS_Project/PHP/DelAuthor.php'
+                                                let fData = new FormData();
+                                                fData.append('Author_ID', rs.Author_ID);
+                                                axios.post(url, fData)
+                                                    .then(response => alert(response.data))
+                                                    .catch(error => alert(error))
+                                            }}>
+                                                <span>Delete</span>
+                                            </Link></td>
+                                            <td><Link className="cssbuttons-io-buttonupd">
+                                                <span>Update</span>
+                                            </Link></td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </>
@@ -82,4 +107,4 @@ class Inst extends Component {
     }
 }
 
-export default Inst
+export default Author

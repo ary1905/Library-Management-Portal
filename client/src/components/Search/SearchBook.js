@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Search.css'
 
-class Inst extends Component {
+class Book extends Component {
     state = {
         Books: [],
         Input: '',
@@ -57,33 +58,60 @@ class Inst extends Component {
                         />
                     </div>
                 </form>
-                <div className="container my-2" style={{ padding: 20, color: 'white' }}>
-                    <div className="col-xs-8">
-                        <h1 className='my-4'>Books Table</h1>
-                        <table className={`table table-bordered my-3 table-striped table-${this.props.mode}`}>
-                            <thead className="thead-light">
-                                <tr style={{ padding: 20, color: 'white' }}>
-                                    <th>Books ID</th>
-                                    <th>Books Name</th>
-                                    <th>Author ID</th>
-                                    <th>ISBN</th>
-                                    <th>Book Status</th>
-                                    <th>Category ID</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {filteredBooks.map((rs, index) => (
-                                    <tr key={index}>
-                                        <td style={{ color: 'white' }}>{rs.Book_ID}</td>
-                                        <td style={{ color: 'white' }}>{rs.Book_Name}</td>
-                                        <td style={{ color: 'white' }}>{rs.Author_ID}</td>
-                                        <td style={{ color: 'white' }}>{rs.ISBN}</td>
-                                        <td style={{ color: 'white' }}>{rs.Book_Status}</td>
-                                        <td style={{ color: 'white' }}>{rs.Category_ID}</td>
+                <div className='page' style={{ width: '1519px', height: '100vh', position: 'absolute', left: '0', top: '150px' }}>
+                    <div className="page" style={{ padding: 20 }}>
+                        <div className="col-xs-8" style={{ border: '5px solid #d5ad18', borderRadius: '10px' }}>
+                            <table className={`table`}>
+                                <thead>
+                                    <tr style={{ backgroundColor: '#d5ad18' }}>
+                                        <th style={{ border: 'none' }}></th>
+                                        <th colSpan={1} style={{ border: 'none' }}><h1 style={{ color: 'black', fontWeight: 'bold', textIndent: '480px' }}>Books Table</h1></th>
+                                        <th style={{ border: 'none' }}></th>
+                                        <th style={{ border: 'none' }}></th>
+                                        <th style={{ border: 'none' }}></th>
+                                        <th style={{ border: 'none' }}></th>
+                                        <th style={{ border: 'none' }}></th>
+                                        <th style={{ border: 'none' }}></th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <thead style={{ color: 'white' }}>
+                                    <tr>
+                                        <th style={{ height: '40px' }}>Books ID</th>
+                                        <th>Books Name</th>
+                                        <th>Author ID</th>
+                                        <th>ISBN</th>
+                                        <th>Book Status</th>
+                                        <th>Category ID</th>
+                                        <th colSpan={2} style={{ textAlign: "center" }}>Operation</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="thead-light" style={{ color: 'white' }}>
+                                    {filteredBooks.map((rs, index) => (
+                                        <tr key={index}>
+                                            <td>{rs.Book_ID}</td>
+                                            <td>{rs.Book_Name}</td>
+                                            <td>{rs.Author_ID}</td>
+                                            <td>{rs.ISBN}</td>
+                                            <td>{rs.Book_Status}</td>
+                                            <td>{rs.Category_ID}</td>
+                                            <td><Link className="cssbuttons-io-buttondel" to='/Books' onClick={this.handleDelete = () => {
+                                                const url = 'http://localhost/DBS_Project/PHP/DelBook.php'
+                                                let fData = new FormData();
+                                                fData.append('Book_ID', rs.Book_ID);
+                                                axios.post(url, fData)
+                                                    .then(response => alert(response.data))
+                                                    .catch(error => alert(error))
+                                            }}>
+                                                <span>Delete</span>
+                                            </Link></td>
+                                            <td><Link className="cssbuttons-io-buttonupd">
+                                                <span>Update</span>
+                                            </Link></td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </>
@@ -91,4 +119,4 @@ class Inst extends Component {
     }
 }
 
-export default Inst
+export default Book

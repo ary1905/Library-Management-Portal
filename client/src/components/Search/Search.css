@@ -11,6 +11,8 @@
     border: 2px black;
     border-radius: 10%;
   }
+
+
   
   /* Style the search dropdown */
   .search-dropdown {
@@ -37,37 +39,62 @@
     border: 2px black;
     border-radius: 4px;
   }
-  
-  /* Style the search button */
-  .search-button {
-    padding: 5px 10px;
-    font-size: 16px;
-    border: none;
-    background-color: #4CAF50;
+
+
+  .cssbuttons-io-buttondel {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 10px;
+    padding: 0.7em 1.4em 0.7em 1.1em;
     color: white;
-    cursor: pointer;
-    border: 2px black;
-    border-radius: 4px;
+    background: #ad5389;
+    background: linear-gradient(0deg, rgb(203, 14, 46) 0%, rgb(232, 140, 112) 100%);
+    border: none;
+    box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+    letter-spacing: 0.05em;
+    border-radius: 20em;
+    text-decoration: none;
+    width: fit-content;
   }
   
-  /* Change the search button color on hover */
-  .search-button:hover {
-    background-color: #3e8e41;
+  
+  .cssbuttons-io-buttondel:hover {
+    box-shadow: 0 0.2em 0.5em 0.5em #f56f6f;
   }
   
-  /* Style the search container on hover */
-  .search-container:hover {
-    box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
+  .cssbuttons-io-buttondel:active {
+    box-shadow: 0 0.2em 0.5em 0.5em #f7056298;
+  }
+
+
+  .cssbuttons-io-buttonupd {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 10px;
+    padding: 0.7em 1.4em 0.7em 1.1em;
+    color: white;
+    background: #ad5389;
+    background: linear-gradient(0deg, rgb(19, 49, 243) 0%, rgb(10, 228, 224) 100%);
+    border: none;
+    box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+    letter-spacing: 0.05em;
+    border-radius: 20em;
+    text-decoration: none;
+    width: fit-content;
   }
   
-  /* Style the search dropdown on focus */
-  .search-dropdown:focus {
-    outline: none;
-    border-bottom: 1px solid #4CAF50;
+  .cssbuttons-io-buttonupd svg {
+    margin-right: 6px;
   }
   
-  /* Style the search input on focus */
-  .search-input:focus {
-    outline: none;
-    border-bottom: 1px solid #4CAF50;
+  .cssbuttons-io-buttonupd:hover {
+    box-shadow: 0 0.2em 0.5em 0.5em #0cfffbff;
+  }
+  
+  .cssbuttons-io-buttonupd:active {
+    box-shadow: 0 0.2em 0.5em 0.5em #0cfffb98;
   }

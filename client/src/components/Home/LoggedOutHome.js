@@ -9,7 +9,7 @@ function LibraryPortal(props) {
   return (
     <div className='mainbody'>
       <header className="header">
-        <h1><span class="welcome">Welcome to the </span><span class="highlight">BookShelf-Pro</span> <span class="web-portal">Web Portal</span></h1>
+        <h1><span className="welcome">Welcome to the </span><span className="highlight">BookShelf-Pro</span> <span className="web-portal">Web Portal</span></h1>
       </header>
       <main className="main">
         <section className='section1'>

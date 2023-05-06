@@ -23,13 +23,10 @@ class Author extends Component {
                                     <th style={{ border: 'none' }}></th>
                                     <th style={{ border: 'none' }}><h1 style={{ color: 'black', fontWeight:'bold', textIndent:'150px' }}>Authors Table</h1></th>
                                     <th style={{ border: 'none' }}></th>
-                                    <th style={{ border: 'none' }}></th>
-                                    <th style={{ border: 'none' }}></th>
-                                    <th style={{ border: 'none' }}></th>
                                 </tr>
                             </thead>
                             <thead style={{ color:'white' }}>
-                                <tr>
+                                <tr style={{textAlign:'center'}}>
                                     <th style={{ height: '40px' }}>Authors ID</th>
                                     <th>Authors Name</th>
                                     <th>Number of Books</th>
@@ -37,7 +34,7 @@ class Author extends Component {
                             </thead>
                             <tbody className="thead-light" style={{ color:'white' }}>
                                 {this.state.Authors.map((rs, index) => (
-                                    <tr key={index}>
+                                    <tr key={index} style={{textAlign:'center'}}>
                                         <td>{rs.Author_ID}</td>
                                         <td>{rs.Author_Name}</td>
                                         <td>{rs.NumBooks}</td>

@@ -14,7 +14,7 @@ class Book extends Component {
     }
     render() {
         return (
-            <div className='page' style={{ width: '1519px', height: '100vh', position: 'absolute', left: '0', top: '70px' }}>
+            <div className='page' style={{ width: '1519px', height: '100vh', position: 'absolute', left: '0', top: '150px' }}>
                 <div className="page" style={{ padding: 20 }}>
                     <div className="col-xs-8" style={{ border: '5px solid #d5ad18', borderRadius: '10px' }}>
                         <table className={`table`}>

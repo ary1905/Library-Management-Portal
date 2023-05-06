@@ -9,7 +9,7 @@ function LibraryPortal(props) {
   return (
     <div className='mainbody'>
       <header className="header">
-        <h1><span class="welcome">Welcome to the </span><span class="highlight">BookShelf-Pro</span> <span class="web-portal">Web Portal</span></h1>
+        <h1><span className="welcome">Welcome to the </span><span className="highlight">BookShelf-Pro</span> <span className="web-portal">Web Portal</span></h1>
       </header>
       <main className="main">
         <section className='section1'>
@@ -35,13 +35,13 @@ function LibraryPortal(props) {
         </section>
         <section className={`${props.box_shadow}`}>
           <img src={EventImage} alt="Events" className="section-image" />
-          <h2 className="section-title">Events</h2>
-          <p className="section-description">Join us for upcoming events</p>
+          <h2 className="section-title">Admins</h2>
+          <p className="section-description">Manage Library Admins</p>
           {
             props.isLogged ?
-              <Link className="btn btn-dark">View All Events</Link>
+              <Link className="btn btn-dark" to='/Admin'>View All Admins</Link>
               :
-              <span className="btn btn-dark">View All Events</span>
+              <span className="btn btn-dark">View All Admins</span>
 
           }
         </section>

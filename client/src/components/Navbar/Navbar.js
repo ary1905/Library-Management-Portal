@@ -11,7 +11,7 @@ export default function Navbar(props) {
     }
 
     return (
-        <nav className={`navbar navbar-expand-lg bg-blue navbar-dark`} style={{ height: '90px' }}>
+        <nav className={`navbar navbar-expand-lg bg-blue navbar-dark`}>
             <div className="container-fluid">
                 <img src='favicon.png' alt='Logo' className='mx-2' style={{ width: '50px', height: '50px' }}></img>
                 <h1 className="navbar-brand my-1 mx-1" style={{ fontSize: '35px' }}><strong>{props.title}</strong></h1>
@@ -32,11 +32,10 @@ export default function Navbar(props) {
                             </Link>
                             <ul className="dropdown-menu">
                                 <li><Link className="dropdown-item" to="/AddBook"><p style={{ color: 'white' }}>Add New Book</p></Link></li>
-                                <li><Link className="dropdown-item" to="/AddBook"><p style={{ color: 'white' }}>Add New Admin</p></Link></li>
-                                <li><Link className="dropdown-item" to="/AddBook"><p style={{ color: 'white' }}>Add New Author</p></Link></li>
-                                <li><Link className="dropdown-item" to="/AddBook"><p style={{ color: 'white' }}>Add New User</p></Link></li>
-                                <li><Link className="dropdown-item" to="/AddBook"><p style={{ color: 'white' }}>Add New Category</p></Link></li>
-                                <li><Link className="dropdown-item" to="/AddBook"><p style={{ color: 'white' }}>Add New Issue</p></Link></li>
+                                <li><Link className="dropdown-item" to="/AddAuthor"><p style={{ color: 'white' }}>Add New Author</p></Link></li>
+                                <li><Link className="dropdown-item" to="/AddUser"><p style={{ color: 'white' }}>Add New User</p></Link></li>
+                                <li><Link className="dropdown-item" to="/AddCategory"><p style={{ color: 'white' }}>Add New Category</p></Link></li>
+                                <li><Link className="dropdown-item" to="/AddNewIssue"><p style={{ color: 'white' }}>Add New Issue</p></Link></li>
                             </ul>
                         </li>
                         <li className="nav-item dropdown">
