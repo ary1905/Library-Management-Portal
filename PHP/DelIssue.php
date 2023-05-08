@@ -13,14 +13,13 @@ if (mysqli_connect_error()) {
     exit();
 }
 else {
-    $Category_ID = $_POST['Category_ID'];
+    $Issue_ID = $_POST['Issue_ID'];
     
-    $sql = "DELETE FROM category where Category_ID= '$Category_ID';";
+    $sql = "DELETE FROM issue_book where Issue_ID='$Issue_ID';";
     $res = mysqli_query($conn, $sql);
 
     if ($res) {
-        echo "Success  -";
-        echo "  -Deleted Record with Category_ID =  $Category_ID";
+        
     }
     else {
         echo "Error!";

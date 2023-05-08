@@ -1,6 +1,7 @@
 import React from 'react'
 import './about.css'
 import profile1 from './1.jpg'
+import profile2 from './2.jpg'
 
 export default function About(props) {
     return (
@@ -73,23 +74,23 @@ export default function About(props) {
                 </div>
                 <div className="card1 my-5 mx-5">
                     <div className="img-bx">
-                        <img src='' style={{ paddingBottom: '30px' }} alt="img" />
+                        <img src={profile2} style={{ paddingBottom: '30px' }} alt="img" />
                     </div>
                     <div className="content">
                         <div className="detail">
                             <h2 className='my-2' style={{ color: 'white' }}>Akarsh Sinha<br /><span>Team Member</span></h2>
                             <ul className="sci my-2">
                                 <li>
-                                    <a href="https://www.facebook.com/aryan19may" target='blank'><i className="fab fa-facebook-f"></i></a>
+                                    <a href="https://www.facebook.com" target='blank'><i className="fab fa-facebook-f"></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://twitter.com/LonerWeeb_1905" target='blank'><i className="fab fa-twitter"></i></a>
+                                    <a href="https://twitter.com" target='blank'><i className="fab fa-twitter"></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://www.linkedin.com/in/aryan-singh-394910250/" target='blank'><i className="fab fa-linkedin-in"></i></a>
+                                    <a href="https://www.linkedin.com/in/akarsh-sinha-686163220/" target='blank'><i className="fab fa-linkedin-in"></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://www.instagram.com/aryan_singh0519/" target='blank'><i className="fab fa-instagram"></i></a>
+                                    <a href="https://www.instagram.com/akarshsinha.31/" target='blank'><i className="fab fa-instagram"></i></a>
                                 </li>
                             </ul>
                         </div>

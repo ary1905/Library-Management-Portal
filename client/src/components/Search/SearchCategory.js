@@ -76,7 +76,7 @@ class Category extends Component {
                                         <th style={{ height: '40px' }}>Category ID</th>
                                         <th>Category Name</th>
                                         <th>Shelf Number</th>
-                                        <th colSpan={2} style={{ textAlign: "center" }}>Operation</th>
+                                        <th style={{ textAlign: "center" }}>Operation</th>
                                     </tr>
                                 </thead>
                                 <tbody className="thead-light" style={{ color: 'white' }}>
@@ -94,9 +94,6 @@ class Category extends Component {
                                                     .catch(error => alert(error))
                                             }}>
                                                 <span>Delete</span>
-                                            </Link></td>
-                                            <td><Link className="cssbuttons-io-buttonupd">
-                                                <span>Update</span>
                                             </Link></td>
                                         </tr>
                                     ))}

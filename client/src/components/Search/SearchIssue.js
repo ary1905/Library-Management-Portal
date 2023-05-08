@@ -4,19 +4,19 @@ import axios from 'axios';
 import './Search.css'
 
 
-class Book extends Component {
+class Issue extends Component {
 
     state = {
-        Books: [],
+        Issue: [],
         Input: '',
         Option: 'None'
     }
 
     componentDidMount() {
-        const url = 'http://localhost/DBS_Project/PHP/Book.php'
+        const url = 'http://localhost/DBS_Project/PHP/Issue.php'
         axios.get(url).then(response => response.data)
             .then((data) => {
-                this.setState({ Books: data })
+                this.setState({ Issue: data })
             })
     }
 
@@ -30,13 +30,13 @@ class Book extends Component {
 
 
     render() {
-        const filteredBooks = this.state.Books.filter((book) => {
-            if (this.state.Option === 'Book_Name') {
-                return book.Book_Name.toLowerCase().includes(this.state.Input.toLowerCase())
-            } else if (this.state.Option === 'ISBN') {
-                return book.ISBN.toLowerCase().includes(this.state.Input.toLowerCase())
-            } else if (this.state.Option === 'Category_ID') {
-                return book.Category_ID.toLowerCase().includes(this.state.Input.toLowerCase())
+        const filteredIssue = this.state.Issue.filter((issue) => {
+            if (this.state.Option === 'Issue_ID') {
+                return issue.Issue_ID.toLowerCase().includes(this.state.Input.toLowerCase())
+            } else if (this.state.Option === 'Book_ID') {
+                return issue.Book_ID.toLowerCase().includes(this.state.Input.toLowerCase())
+            } else if (this.state.Option === 'User_ID') {
+                return issue.User_ID.toLowerCase().includes(this.state.Input.toLowerCase())
             } else {
                 return true
             }
@@ -48,9 +48,9 @@ class Book extends Component {
                     <div className="search-container mx-2">
                         <select className="search-dropdown" value={this.state.Option} onChange={this.handleOptionChange}>
                             <option value="None">---None---</option>
-                            <option value="Book_Name">Book Name</option>
-                            <option value="ISBN">ISBN</option>
-                            <option value="Category_ID">Category</option>
+                            <option value="Issue_ID">Issue ID</option>
+                            <option value="Book_ID">Book ID</option>
+                            <option value="User_ID">User ID</option>
                         </select>
                         <input
                             type="text"
@@ -68,7 +68,9 @@ class Book extends Component {
                                 <thead>
                                     <tr style={{ backgroundColor: '#d5ad18' }}>
                                         <th style={{ border: 'none' }}></th>
-                                        <th colSpan={1} style={{ border: 'none' }}><h1 style={{ color: 'black', fontWeight: 'bold', textIndent: '480px' }}>Books Table</h1></th>
+                                        <th style={{ border: 'none' }}><h1 style={{ color: 'black', fontWeight: 'bold', textIndent: '400px' }}>Issue</h1></th>
+                                        <th style={{ border: 'none' }}><h1 style={{ color: 'black', fontWeight: 'bold', textIndent: '-50px' }}>Table</h1></th>
+                                        <th style={{ border: 'none' }}></th>
                                         <th style={{ border: 'none' }}></th>
                                         <th style={{ border: 'none' }}></th>
                                         <th style={{ border: 'none' }}></th>
@@ -79,28 +81,32 @@ class Book extends Component {
                                 </thead>
                                 <thead style={{ color: 'white' }}>
                                     <tr>
-                                        <th style={{ height: '40px' }}>Books ID</th>
-                                        <th>Books Name</th>
-                                        <th>Author ID</th>
-                                        <th>ISBN</th>
-                                        <th>Book Status</th>
-                                        <th>Category ID</th>
+                                        <th style={{ height: '40px' }}>Issue ID</th>
+                                        <th>Book ID</th>
+                                        <th>User ID</th>
+                                        <th>Issue Date</th>
+                                        <th>Due Date</th>
+                                        <th>Return Date</th>
+                                        <th>Issue Status</th>
+                                        <th>Fine</th>
                                         <th colSpan={2} style={{ textAlign: "center" }}>Operation</th>
                                     </tr>
                                 </thead>
                                 <tbody className="thead-light" style={{ color: 'white' }}>
-                                    {filteredBooks.map((rs, index) => (
+                                    {filteredIssue.map((rs, index) => (
                                         <tr key={index}>
+                                            <td>{rs.Issue_ID}</td>
                                             <td>{rs.Book_ID}</td>
-                                            <td>{rs.Book_Name}</td>
-                                            <td>{rs.Author_ID}</td>
-                                            <td>{rs.ISBN}</td>
-                                            <td>{rs.Book_Status}</td>
-                                            <td>{rs.Category_ID}</td>
-                                            <td><Link className="cssbuttons-io-buttondel" to='/Books' onClick={this.handleDelete = () => {
-                                                const url = 'http://localhost/DBS_Project/PHP/DelBook.php'
+                                            <td>{rs.User_ID}</td>
+                                            <td>{rs.Issue_Date}</td>
+                                            <td>{rs.Expected_Return_Date}</td>
+                                            <td>{rs.Return_Date}</td>
+                                            <td>{rs.Issue_Status}</td>
+                                            <td>{rs.Fine}</td>
+                                            <td><Link className="cssbuttons-io-buttondel" to='/Issue' onClick={this.handleDelete = () => {
+                                                const url = 'http://localhost/DBS_Project/PHP/DelIssue.php'
                                                 let fData = new FormData();
-                                                fData.append('Book_ID', rs.Book_ID);
+                                                fData.append('Issue_ID', rs.Issue_ID);
                                                 axios.post(url, fData)
                                                     .then(response => alert(response.data))
                                                     .catch(error => alert(error))
@@ -108,26 +114,13 @@ class Book extends Component {
                                                 <span>Delete</span>
                                             </Link></td>
                                             <td><Link className="cssbuttons-io-buttonupd" to='/Issue' onClick={this.handleUpdate = (e) => {
-                                                const url = 'http://localhost/DBS_Project/PHP/UpdBook.php'
+                                                const url = 'http://localhost/DBS_Project/PHP/UpdIssue.php'
                                                 let fData = new FormData();
-                                                fData.append('Book_ID', rs.Book_ID);
+                                                fData.append('Issue_ID', rs.Issue_ID);
+                                                fData.append('User_ID', rs.User_ID);
                                                 axios.post(url, fData)
                                                     .then(response => alert(response.data))
                                                     .catch(error => alert(error))
-
-                                                e.preventDefault();
-                                                const User_ID = window.prompt("Enter the User ID:");
-                                                const Issue_ID = window.prompt("Enter the Issue ID:");
-                                                let fData1 = new FormData();
-                                                fData1.append('Book_ID', rs.Book_ID);
-                                                fData1.append('User_ID', `${User_ID}`);
-                                                fData1.append('Issue_ID', `${Issue_ID}`);
-                                                const url1 = 'http://localhost/DBS_Project/PHP/addissue.php'
-                                                axios.post(url1, fData1)
-                                                    .then(response => alert(response.data))
-                                                    .catch(error => alert(error))
-                                                e.preventDefault();
-                                                window.location.href = '/Issue'
                                             }}>
                                                 <span>Update</span>
                                             </Link></td>
@@ -143,4 +136,4 @@ class Book extends Component {
     }
 }
 
-export default Book
+export default Issue

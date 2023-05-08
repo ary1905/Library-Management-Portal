@@ -12,6 +12,8 @@ import LoggedOut from './components/Home/LoggedOutHome';
 import About from './components/About/About';
 import LoginPage from './components/LogReg/LoginPage';
 import Register from './components/LogReg/Register';
+import Admin from './components/Display/Admin';
+import SearchAdmin from './components/Search/SearchAdmin';
 import Book from './components/Display/Book';
 import SearchBook from './components/Search/SearchBook';
 import AddBook from './components/Add/Book/AddBook';
@@ -20,19 +22,18 @@ import Author from './components/Display/Author'
 import SearchAuthor from './components/Search/SearchAuthor';
 import AddAuthor from './components/Add/Author/AddAuthor';
 import SuccessAuthor from './components/Add/Author/SuccessAuthor';
-import Admin from './components/Display/Admin';
-import SearchAdmin from './components/Search/SearchAdmin';
 import Category from './components/Display/Category';
 import SearchCategory from './components/Search/SearchCategory';
 import AddCategory from './components/Add/Category/AddCategory';
 import SuccessCat from "./components/Add/Category/SuccessCat";
-//import User from './components/Display/User';
-//import SearchUser from './components/Search/SearchUser';
+import User from './components/Display/User';
+import SearchUser from './components/Search/SearchUser';
 import AddUser from './components/Add/User/AddUser';
 import SuccessUser from './components/Add/User/SuccessUser';
+import Issue from './components/Display/Issue';
+import SearchIssue from './components/Search/SearchIssue';
 
 function App() {
-
   const [isLogged, setIsLogged] = useState(false);
 
   const change = () => {
@@ -75,10 +76,14 @@ function App() {
               <Route path='/AddCategory' element={<AddCategory></AddCategory>}></Route>
               <Route path='/SuccessCat' element={<SuccessCat></SuccessCat>}></Route>
               <Route path='/SearchCategory' element={<SearchCategory></SearchCategory>}></Route>
+              <Route path='/User' element={<User></User>}></Route>
               <Route path='/AddUser' element={<AddUser></AddUser>}></Route>
               <Route path='/SuccessUser' element={<SuccessUser></SuccessUser>}></Route>
+              <Route path='/SearchUser' element={<SearchUser></SearchUser>}></Route>
               <Route path='/Admin' element={<Admin></Admin>}></Route>
               <Route path='/SearchAdmin' element={<SearchAdmin></SearchAdmin>}></Route>
+              <Route path='/Issue' element={<Issue></Issue>}></Route>
+              <Route path='/SearchIssue' element={<SearchIssue></SearchIssue>}></Route> 
             </Routes>
           </div>
         </div>

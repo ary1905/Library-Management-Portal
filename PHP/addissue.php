@@ -13,19 +13,15 @@ if (mysqli_connect_error()) {
     exit();
 }
 else {
-    $Author_ID = $_POST['Author_ID'];
-    $Author_Name = $_POST['Author_Name'];
+    $Book_ID = $_POST['Book_ID'];
+    $User_ID = $_POST['User_ID'];
+    $Issue_ID = $_POST['Issue_ID'];
 
-    $sql1 = "SELECT count(*) as NUM FROM books where Author_ID = $Author_ID;";
-    $res1 = mysqli_query($conn, $sql1);
-    while($row = mysqli_fetch_array($res1)) {
-        $sql = "INSERT INTO author VALUES ('$Author_ID', '$Author_Name', '$row[NUM]');";
-    }
+    $sql = "INSERT INTO issue_book (Book_ID, User_ID, Issue_ID, Issue_Date, Expected_Return_Date) VALUES ($Book_ID, $User_ID, $Issue_ID, CURDATE(), DATE_ADD(CURDATE(), INTERVAL 14 DAY));";
     $res = mysqli_query($conn, $sql);
+
     if ($res) {
         echo "Success";
-        echo "</br>"; 
-        echo "Author Details Added Successfully";
     }
     else {
         echo "Error!";

@@ -35,7 +35,6 @@ export default function Navbar(props) {
                                 <li><Link className="dropdown-item" to="/AddAuthor"><p style={{ color: 'white' }}>Add New Author</p></Link></li>
                                 <li><Link className="dropdown-item" to="/AddUser"><p style={{ color: 'white' }}>Add New User</p></Link></li>
                                 <li><Link className="dropdown-item" to="/AddCategory"><p style={{ color: 'white' }}>Add New Category</p></Link></li>
-                                <li><Link className="dropdown-item" to="/AddNewIssue"><p style={{ color: 'white' }}>Add New Issue</p></Link></li>
                             </ul>
                         </li>
                         <li className="nav-item dropdown">

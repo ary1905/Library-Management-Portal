@@ -68,7 +68,7 @@ class Admin extends Component {
                                     <tr>
                                         <th style={{ height: '40px' }}>Admin ID</th>
                                         <th>Admin Password</th>
-                                        <th colSpan={2} style={{ textAlign: "center" }}>Operation</th>
+                                        <th style={{ textAlign: "center" }}>Operation</th>
                                     </tr>
                                 </thead>
                                 <tbody className="thead-light" style={{ color: 'white' }}>
@@ -76,7 +76,7 @@ class Admin extends Component {
                                         <tr key={index}>
                                             <td>{rs.Admin_ID}</td>
                                             <td>{rs.Admin_password}</td>
-                                            <td style={{paddingLeft:'50px'}}><Link className="cssbuttons-io-buttondel" to='/Admin' onClick={this.handleDelete = () => {
+                                            <td style={{paddingLeft:'100px'}}><Link className="cssbuttons-io-buttondel" to='/Admin' onClick={this.handleDelete = () => {
                                                 const url = 'http://localhost/DBS_Project/PHP/DelAdmin.php'
                                                 let fData = new FormData();
                                                 fData.append('Admin_ID', rs.Admin_ID);
@@ -85,9 +85,6 @@ class Admin extends Component {
                                                     .catch(error => alert(error))
                                             }}>
                                                 <span>Delete</span>
-                                            </Link></td>
-                                            <td><Link className="cssbuttons-io-buttonupd">
-                                                <span>Update</span>
                                             </Link></td>
                                         </tr>
                                     ))}
