@@ -84,7 +84,7 @@ export default function About(props) {
                                     <a href="https://www.facebook.com" target='blank'><i className="fab fa-facebook-f"></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://twitter.com" target='blank'><i className="fab fa-twitter"></i></a>
+                                    <a href="https://twitter.com/AkarshSinha31" target='blank'><i className="fab fa-twitter"></i></a>
                                 </li>
                                 <li>
                                     <a href="https://www.linkedin.com/in/akarsh-sinha-686163220/" target='blank'><i className="fab fa-linkedin-in"></i></a>
