@@ -1,9 +1,5 @@
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from 'react'
 import Navbar from './components/Navbar/Navbar';
 import Navbar2 from './components/Navbar/Navbar2';
@@ -49,7 +45,7 @@ function App() {
               searchMode='black'
               textMode='white'
               btnMode='light'
-              change = {change} />
+              change={change} />
             :
             <Navbar2 mode='dark'
               searchMode='black'
@@ -83,7 +79,7 @@ function App() {
               <Route path='/Admin' element={<Admin></Admin>}></Route>
               <Route path='/SearchAdmin' element={<SearchAdmin></SearchAdmin>}></Route>
               <Route path='/Issue' element={<Issue></Issue>}></Route>
-              <Route path='/SearchIssue' element={<SearchIssue></SearchIssue>}></Route> 
+              <Route path='/SearchIssue' element={<SearchIssue></SearchIssue>}></Route>
             </Routes>
           </div>
         </div>
