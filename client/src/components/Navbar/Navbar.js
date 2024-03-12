@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
+import './navbar.css'
+import './button.css'
 
 export default function Navbar(props) {
 

@@ -1,4 +1,4 @@
-import Axios from 'axios';
+// import Axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
 import { Link, useNavigate} from 'react-router-dom';
@@ -10,20 +10,22 @@ const LoginPage = (props) => {
   const [Pass_word, setPass_word] = useState('');
 
   const login = () => {
-    Axios.post("http://localhost:3001/login_auth", {
-      ID: ID,
-      Pass_word: Pass_word,
-    }).then((response) => {
-      if (response.data.message) {
-        alert(response.data.message);
-        console.log(response);
-      }
-      else {
-        navigate('/');
-        console.log(response);
-        props.change();
-      }   
-    });
+    // Axios.post("http://localhost:3001/login_auth", {
+    //   ID: ID,
+    //   Pass_word: Pass_word,
+    // }).then((response) => {
+    //   if (response.data.message) {
+    //     alert(response.data.message);
+    //     console.log(response);
+    //   }
+    //   else {
+    //     console.log(response);
+    //     navigate('/');
+    //     props.change();
+    //   }   
+    // });
+    navigate('/');
+    props.change();
   };
 
   return (

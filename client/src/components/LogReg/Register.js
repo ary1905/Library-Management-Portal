@@ -1,25 +1,27 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import LibraryImg from "./lib.jpg";
-import axios from 'axios';
+// import axios from 'axios';
 
 
 const LoginPage = (props) => {
   const [Admin_ID, setAdmin_ID] = useState('');
   const [Admin_password, setAdmin_Password] = useState('');
-
+  const navigate = useNavigate();
   const handleChange = () => {
-    if (Admin_ID.length !== 0 && Admin_password.length !== 0) {
-      const url = 'http://localhost/DBS_Project/PHP/register.php'
+    // if (Admin_ID.length !== 0 && Admin_password.length !== 0) {
+    //   const url = 'http://localhost/DBS_Project/PHP/register.php'
 
-      let fData = new FormData();
-      fData.append('Admin_ID', Admin_ID);
-      fData.append('Admin_password', Admin_password);
+    //   let fData = new FormData();
+    //   fData.append('Admin_ID', Admin_ID);
+    //   fData.append('Admin_password', Admin_password);
 
-      axios.post(url, fData)
-        .then(response => alert(response.data))
-        .catch(error => alert(error));
-    }
+    //   axios.post(url, fData)
+    //     .then(response => alert(response.data))
+    //     .catch(error => alert(error));
+    // }
+    navigate('/');
+    props.change();
   }
   return (
     <>
@@ -53,7 +55,7 @@ const LoginPage = (props) => {
                         </div>
                       </form>
                       <div className="pt-1 mb-4">
-                        <Link type='submit' to='/Login' className={`btn btn-${props.btnMode}`} onClick={handleChange}>Register</Link>
+                        <Link type='submit' to='/' className={`btn btn-${props.btnMode}`} onClick={handleChange}>Register</Link>
                       </div>
                       <Link to="/Login" className="small text-muted">Already a Member.</Link><br></br>
                     </div>
